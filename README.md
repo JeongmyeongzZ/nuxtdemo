@@ -20,6 +20,7 @@ $ npm run generate
 # Todo
 
 https://ko.nuxtjs.org/api/
+https://medium.com/js-dojo/consuming-apis-in-nuxt-using-the-repository-pattern-8a13ea57d520
 
 ###tailwind purge
 

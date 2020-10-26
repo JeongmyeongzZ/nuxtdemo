@@ -45,7 +45,7 @@ export const mutations = {
 
 export const actions = {
   async getUserList({ commit }) {
-    const response = await serverSideRequest(this.$api.user.getUserList)();
+    const response = await this.$axios.get(); serverSideRequest(this.$api.user.getUserList)();
 
     if (! response) {
       return;
