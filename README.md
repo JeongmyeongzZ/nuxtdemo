@@ -17,4 +17,16 @@ $ npm run start
 $ npm run generate
 ```
 
+# Todo
+
+https://ko.nuxtjs.org/api/
+
+###tailwind purge
+
+https://tailwindcss.com/docs/controlling-file-size
+
+
+###vue  realworld
+https://github.com/gothinkster/vue-realworld-example-app
+
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).

@@ -28,7 +28,21 @@
 </template>
 
 <script>
-export default {}
+export default {
+  name: 'Index',
+  components: {
+    UserForm: () => import('~/components/Users/ItemForm'),
+  },
+  fetch ({ store }) {
+    return Promise.all([
+      store.dispatch('users/resetUser'),
+      store.dispatch('cities/getCityList'),
+    ]);
+  },
+  created() {
+    this.$store.dispatch('setLabel', '유저 등록');
+  },
+}
 </script>
 
 <style>
