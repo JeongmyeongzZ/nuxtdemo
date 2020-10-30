@@ -9,8 +9,11 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
+    "apollo-boost": "^0.4.9",
     "core-js": "^3.6.5",
+    "graphql": "^15.4.0",
     "nuxt": "^2.14.6",
+    "vue-apollo": "^3.0.5",
     "vuex-map-fields": "^1.4.0"
   },
   "devDependencies": {
