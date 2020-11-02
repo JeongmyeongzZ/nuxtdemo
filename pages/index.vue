@@ -35,7 +35,7 @@ export default {
   },
   fetch ({ store }) {
     return Promise.all([
-      store.dispatch('users/resetUser'),
+      store.dispatch('article/resetUser'),
       store.dispatch('cities/getCityList'),
     ]);
   },
