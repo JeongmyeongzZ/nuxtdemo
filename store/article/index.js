@@ -1,3 +1,4 @@
+import { serverSideRequest, clientSideRequest } from "~/api";
 import { getField, updateField } from 'vuex-map-fields';
 
 const article = {
@@ -57,14 +58,14 @@ export const actions = {
     const { ...payload } = state.article;
     delete(payload.id);
 
-    await serverSideRequest(this.$api.article.createArticle)(payload);
+    await clientSideRequest(this.$api.article.createArticle)(payload);
   },
 
 
   async updateArticle({ state }) {
     const { id, ...payload} = state.article;
 
-    await serverSideRequest(this.$api.article.updateArticle)({
+    await clientSideRequest(this.$api.article.updateArticle)({
       id: id,
     }, payload);
   },
