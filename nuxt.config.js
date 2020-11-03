@@ -38,7 +38,7 @@ export default {
   axios: {
     baseURL: process.env.BASE_URL,
     // debug: true,
-    credentials: true,
+    // credentials: true,
     // common: {
     //   'Accept': 'application/json',
     //   'contentType': 'application/json',
