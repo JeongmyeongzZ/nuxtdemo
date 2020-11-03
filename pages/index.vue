@@ -28,19 +28,19 @@
 </template>
 
 <script>
+import {mapState} from "vuex";
+
 export default {
   name: 'Index',
-  components: {
-    UserForm: () => import('~/components/Users/ItemForm'),
-  },
   fetch ({ store }) {
     return Promise.all([
-      store.dispatch('article/resetUser'),
-      store.dispatch('cities/getCityList'),
+      store.dispatch('article/getArticleList'),
     ]);
   },
-  created() {
-    this.$store.dispatch('setLabel', '유저 등록');
+  computed: {
+    ...mapState({
+      articles: store => store.articles.articleList,
+    }),
   },
 }
 </script>

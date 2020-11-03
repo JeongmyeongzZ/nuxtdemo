@@ -18,6 +18,7 @@ export default {
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
+    '~/plugins/api.js',
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
@@ -33,6 +34,22 @@ export default {
   modules: [
     '@nuxtjs/axios',
   ],
+
+  axios: {
+    baseURL: process.env.BASE_URL,
+    // debug: true,
+    credentials: true,
+    // common: {
+    //   'Accept': 'application/json',
+    //   'contentType': 'application/json',
+    //   'Access-Control-Allow-Origin': '*',
+    // },
+    headers: {
+      'common': {
+        'Accept': 'application/json, */*',
+      },
+    },
+  },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {

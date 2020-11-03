@@ -18,6 +18,7 @@ const article = {
 };
 
 const articleRepository = client => ({
+  // getArticleList: () => client[article.getArticleList.method](article.getArticleList.url),
   getArticleList: () => client[article.getArticleList.method](article.getArticleList.url),
   getArticle: route => client[article.getArticle.method](article.getArticle.url(route)),
   createArticle: payload => client[article.createArticle.method](article.createArticle.url, payload),
