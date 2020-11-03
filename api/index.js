@@ -1,6 +1,6 @@
 import {
   articleRepository
-} from "./repositories";
+} from "~/api/repositories";
 
 const httpClient = client => ({
   article: articleRepository(client),

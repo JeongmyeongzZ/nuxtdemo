@@ -1,18 +1,21 @@
-import { errorBag } from "~/lang";
-
 const translateErrorMessage = error => {
-  if (error.response.status === 400) {
-    return errorBag[error.response.data.errors.type][error.response.data.errors.code];
+  switch (error.response) {
+    case 401:
+      return '인증되지 않은 유저입니다.';
+    case 403:
+      return '접근 권한이 않습니다.';
+    case 404:
+      return '페이지를 찾을 수 없습니다.';
+    case 422:
+      return '잘못된 요청입니다, 관리자에게 문의하세요.';
+    default:
+      return '현재 시스템을 사용할 수 없습니다, 관리자에게 문의하세요.';
   }
-
-  return errorBag['http'][error.response.status] || errorBag['http']['fallback'];
 };
 
 class HttpError extends Error {
   constructor(error) {
     super(translateErrorMessage(error));
-    this.cause = error;
-    this.statusCode = error.response.status;
   }
 }
 
