@@ -1,3 +1,5 @@
+import {authentication} from "@/api/repositories/authentication";
+
 export default {
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
@@ -45,9 +47,9 @@ export default {
       'laravelPassport': {
         provider: 'laravel/passport',
         endpoints: {
-          userInfo: '...'
+          login: authentication.login.url,
+          refresh: authentication.refresh.url
         },
-        url: ,
         clientId: 'kimbym23',
         clientSecret: 'Jungmyung2323_'
       },
