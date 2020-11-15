@@ -36,6 +36,24 @@ export default {
     '@nuxtjs/auth-next'
   ],
 
+  router: {
+    middleware: ['auth']
+  },
+
+  auth: {
+    strategies: {
+      'laravelPassport': {
+        provider: 'laravel/passport',
+        endpoints: {
+          userInfo: '...'
+        },
+        url: ,
+        clientId: 'kimbym23',
+        clientSecret: 'Jungmyung2323_'
+      },
+    }
+  },
+
   axios: {
     baseURL: process.env.BASE_URL,
     // debug: true,
